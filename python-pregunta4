@@ -1,0 +1,10 @@
+#problema 4
+n=int(input("Ingrese el número de alumnos "))
+listado={}
+for i in range(0,n):
+    alumno=input("Ingrese el nombre del alumno ")
+    n1=int(input("Ingrese la nota #1 "))
+    n2=int(input("Ingrese la nota #2 "))
+    n3=int(input("Ingrese la nota #3 "))
+    listado[alumno]=[n1,n2,n3]
+print(listado)

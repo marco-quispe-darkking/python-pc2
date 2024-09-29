@@ -1,0 +1,21 @@
+#problema 3
+numeros=[]
+cantpares=0
+cantimpares=0
+while(True):
+    resp=input("¿Desea ingresar un numero?(SI/NO)  ")
+    if(resp=="NO"):
+        break
+    elif(resp!="SI"):
+        continue
+    num=int(input("Ingrese el número: "))
+    numeros=numeros+[num]
+    if(num%2==0):
+        cantpares+=1
+    else:
+        cantimpares+=1
+
+print(numeros)
+print("Cantidad de números pares:",cantpares)
+print("Cantidad de números impares:",cantimpares)
+#-------------------------------

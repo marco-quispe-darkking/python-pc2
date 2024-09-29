@@ -1,0 +1,161 @@
+#problema 1
+"""
+for i in range(1500,2701):
+    if(i%5==0 or i%7==0):
+        print(i)
+#-------------------------------
+
+#problema 2
+for i in range(1,10):
+    if(i<6):
+        for j in range(0,i):
+            print("*",end="")
+    else:
+        for j in range(0,10-i):
+            print("*",end="")
+    print()
+
+
+#problema 3
+numeros=[]
+cantpares=0
+cantimpares=0
+while(True):
+    resp=input("¿Desea ingresar un numero?(SI/NO)  ")
+    if(resp=="NO"):
+        break
+    elif(resp!="SI"):
+        continue
+    num=int(input("Ingrese el número: "))
+    numeros=numeros+[num]
+    if(num%2==0):
+        cantpares+=1
+    else:
+        cantimpares+=1
+
+print(numeros)
+print("Cantidad de números pares:",cantpares)
+print("Cantidad de números impares:",cantimpares)
+#-------------------------------
+
+
+#problema 4
+n=int(input("Ingrese el número de alumnos "))
+listado={}
+for i in range(0,n):
+    alumno=input("Ingrese el nombre del alumno ")
+    n1=int(input("Ingrese la nota #1 "))
+    n2=int(input("Ingrese la nota #2 "))
+    n3=int(input("Ingrese la nota #3 "))
+    listado[alumno]=[n1,n2,n3]
+print(listado)
+#-------------------------------
+
+
+#problema 5
+sumadeprimos=0
+for i in range(2,100):
+    esprimo=True
+    for j in range(2,i):
+        if(i%j==0):
+            esprimo=False
+    if(esprimo):
+        #print(i) 
+        sumadeprimos+=i
+print(sumadeprimos)
+
+
+#-------------------------------
+
+#problema 6
+a=0
+b=1
+while(a<50):
+    print(a)
+    sum=a+b
+    aux=b
+    b=sum
+    a=aux
+
+#-------------------------------
+#problema 7
+for i in range(1,1000):
+    sum=0
+    for j in range(1,i):
+        if(i%j==0):
+            sum+=j
+    if(sum==i):
+        print(i)
+
+
+
+#-------------------------------
+#problema 8
+def factorial(n):
+    fact=1
+    for i in range(1,n+1):
+        fact*=i
+    return fact
+#n=6
+#print(factorial(n))
+
+#-------------------------------
+
+#problema 9
+texto=input("escriba algo ")
+vocales=["A","E","I","O","U","a","e","i","o","u",]
+for i in texto:
+    if(not(i in vocales)):
+        print(i,end="")
+#-------------------------------
+"""
+#problema 1o
+meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+fecha=input("ingrese una fecha mes/dia/año o mes(en letras) dia, año   ")
+
+
+
+num=""
+fechamod=""
+j=1
+if("0"<=fecha[0]<="9"):
+    for i in fecha:
+        if(i=="/"):
+            if(j==1):
+                mes=int(num)
+            else:
+                dia=int(num)
+            num=""
+            j+=1
+        else:
+            num+=i
+    año=int(num)
+    
+else:
+    i=0
+    mes=""
+    dia=""
+    año=""
+    while(fecha[i]!=" "):
+        mes+=fecha[i]
+        i+=1
+    for j in range(0,12):
+        if (meses[j]==mes):
+            mes=j+1
+            break
+    i+=1
+    while(fecha[i]!=","):
+        dia+=fecha[i]
+        i+=1
+    dia=int(dia)
+    señal=True
+    for i in fecha:
+        if((i!="," and señal)or i==" "):
+            continue
+        señal=False
+        if(i==","):
+            continue
+        año+=i
+    año=int(año)
+print(f"{año}-{mes:02}-{dia:02}")
+             

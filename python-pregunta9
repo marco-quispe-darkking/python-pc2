@@ -1,0 +1,6 @@
+#problema 9
+texto=input("escriba algo ")
+vocales=["A","E","I","O","U","a","e","i","o","u",]
+for i in texto:
+    if(not(i in vocales)):
+        print(i,end="")

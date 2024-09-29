@@ -1,0 +1,51 @@
+#-------------------------------
+
+#problema 1o
+meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+fecha=input("ingrese una fecha mes/dia/año o mes(en letras) dia, año   ")
+
+
+
+num=""
+fechamod=""
+j=1
+if("0"<=fecha[0]<="9"):
+    for i in fecha:
+        if(i=="/"):
+            if(j==1):
+                mes=int(num)
+            else:
+                dia=int(num)
+            num=""
+            j+=1
+        else:
+            num+=i
+    año=int(num)
+    
+else:
+    i=0
+    mes=""
+    dia=""
+    año=""
+    while(fecha[i]!=" "):
+        mes+=fecha[i]
+        i+=1
+    for j in range(0,12):
+        if (meses[j]==mes):
+            mes=j+1
+            break
+    i+=1
+    while(fecha[i]!=","):
+        dia+=fecha[i]
+        i+=1
+    dia=int(dia)
+    señal=True
+    for i in fecha:
+        if((i!="," and señal)or i==" "):
+            continue
+        señal=False
+        if(i==","):
+            continue
+        año+=i
+    año=int(año)
+print(f"{año}-{mes:02}-{dia:02}")
